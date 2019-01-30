@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websockets</title>
+</head>
+<body>
+<label>Message:
+    <input type="text" id="message">
+</label>
+<input type="button" onclick="sendMessage()" value="Send">
+<pre id="output"></pre>
+
+<script>
+    let message = document.getElementById("message");
+    let output = document.getElementById("output");
+    let socket = new WebSocket("ws://localhost:9000/websockets/echo");
+
+    socket.onopen = function () {
+        output.innerHTML += "Status: Connected\n";
+    };
+
+    socket.onmessage = function (res) {
+        output.innerHTML += "Response: " + res.data + "\n"
+    };
+
+    function sendMessage(e) {
+        socket.send(message.value);
+        message.value = "";
+    }
+</script>
+</body>
+</html>

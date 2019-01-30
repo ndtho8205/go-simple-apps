@@ -12,6 +12,9 @@ func main() {
 	router := mux.NewRouter()
 
 	routes.SessionsRegister(router)
+	routes.JsonRegister(router)
+	routes.WebsocketsRegister(router)
+	routes.PasswordRegister(router)
 
 	server := http.Server{
 		Addr:         "localhost:9000",
