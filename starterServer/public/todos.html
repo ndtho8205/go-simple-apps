@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.PageTitle}}</title>
+    <style>
+        li:before {
+            padding-right: 5px;
+            font-size: 1.3em;
+            align-content: center;
+        }
+
+        .done::before {
+            content: "☑";
+            color: dodgerblue;
+        }
+
+        .working::before {
+            content: "☐";
+            color: black;
+        }
+
+        .cancel::before {
+            content: "☒";
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+<h1>{{.PageTitle}}</h1>
+<ul>
+    {{range .Todos}}
+        {{if eq .Status "DONE"}}
+            <li class="done">{{.Title}}</li>
+        {{else if eq .Status "CANCEL"}}
+            <li class="cancel">{{.Title}}</li>
+        {{else}}
+            <li class="working">{{.Title}}</li>
+        {{end}}
+    {{end}}
+</ul>
+</body>
+</html>

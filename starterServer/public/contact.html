@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+{{if .Success}}
+    <h1>Thanks for your message</h1>
+    <p>
+        <strong>Email:</strong> {{.Contact.Email}}<br/>
+        <strong>Subject:</strong> {{.Contact.Subject}}<br/>
+        <strong>Message:</strong> {{.Contact.Message}}<br/>
+    </p>
+{{else}}
+    <h1>Contact</h1>
+    <form method="post">
+        <label>Email:
+            <input type="text" name="email"><br/>
+        </label><br/>
+        <label>Subject:
+            <input type="text" name="subject">
+        </label><br/>
+        <label>Message:
+            <textarea name="message" cols="30" rows="10"></textarea>
+        </label><br/>
+        <input type="submit"/>
+    </form>
+{{end}}
+</body>
+</html>
