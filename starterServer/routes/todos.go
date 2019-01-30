@@ -26,7 +26,7 @@ type TodosPageData struct {
 	Todos     []Todo
 }
 
-func Todos(router *mux.Router, publicDir string) {
+func TodosRegister(router *mux.Router, publicDir string) {
 	tmpl := template.Must(template.ParseFiles(publicDir + "todos.html"))
 
 	todosData := TodosPageData{

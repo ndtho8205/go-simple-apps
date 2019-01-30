@@ -12,7 +12,7 @@ func main() {
 	router := mux.NewRouter()
 
 	routes.BooksRegister(router)
-	routes.Todos(router, "public/")
+	routes.TodosRegister(router, "public/")
 	routes.ContactRegister(router, "public/")
 	routes.FileServerRegister(router, "public/")
 	routes.AboutRegister(router)
