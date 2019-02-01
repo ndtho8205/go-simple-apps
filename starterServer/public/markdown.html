@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<label for="editor"> Input:
+    <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+</label><br/>
+<input type="button" value="Preview" onclick="send()"/>
+<div id="preview">
+</div>
+
+<script>
+    function send() {
+        let xhttp = new XMLHttpRequest();
+        let url = 'http://localhost:9000/markdown';
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.onreadystatechange = (e) => {
+            if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+                console.log("a");
+                document.getElementById("preview").innerHTML = xhttp.response
+            }
+        };
+        xhttp.send(JSON.stringify({"content": document.getElementById("editor").value}));
+    }
+</script>
+</body>
+</html>

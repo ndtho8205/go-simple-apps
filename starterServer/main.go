@@ -9,12 +9,14 @@ import (
 )
 
 func main() {
+	publicDir := "public/"
 	router := mux.NewRouter()
 
 	routes.BooksRegister(router)
-	routes.TodosRegister(router, "public/")
-	routes.ContactRegister(router, "public/")
-	routes.FileServerRegister(router, "public/")
+	routes.TodosRegister(router, publicDir)
+	routes.ContactRegister(router, publicDir)
+	routes.FileServerRegister(router, publicDir)
+	routes.MarkdownRegister(router, publicDir)
 	routes.AboutRegister(router)
 	routes.HomeRegister(router)
 
