@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"go-simple-apps/starterWebsockets/routes"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/gorilla/mux"
+	"github.com/ndtho8205/go-simple-apps/starterWebsockets/routes"
 )
 
 func main() {
