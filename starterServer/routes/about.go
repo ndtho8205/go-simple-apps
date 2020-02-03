@@ -2,10 +2,11 @@ package routes
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
-	"go-simple-apps/starterServer/middlewares"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/ndtho8205/go-simple-apps/starterServer/middlewares"
 )
 
 func aboutHandler(w http.ResponseWriter, r *http.Request) {

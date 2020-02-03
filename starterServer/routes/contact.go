@@ -2,11 +2,12 @@ package routes
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
-	"go-simple-apps/starterServer/middlewares"
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/ndtho8205/go-simple-apps/starterServer/middlewares"
 )
 
 type ContactDetails struct {
